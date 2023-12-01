@@ -27,7 +27,8 @@ object ServerConductorBungee : Plugin() {
         
         if (player.server.info.name.equals(server, true))
             return
-        
+
+        info("${player.name} (${player.uniqueId}) Switched from [${player.server.info.name}] to [$server]")
         val target = ProxyServer.getInstance().getServerInfo(server)
         player.connect(target)
     }
